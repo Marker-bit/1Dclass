@@ -56,16 +56,16 @@
 
 <h1 align = "center" border = "2px dotted red">1 Д, школа №37</h1>
 
-<menu align = "center" class = "anim"><a onclick = "clean('iframe/home.html'); this.style.backgroundColor = 'lightblue'" style = "background-color: lightblue"class = "anim">Главная</a> / <a onclick = "clean('iframe/news.html'); this.style.backgroundColor = 'yellow'"class = "anim">Новости</a> / 
-	<a onclick = "clean('iframe/forum.html'); this.style.backgroundColor = 'green'; this.style.color = 'white'"class = "anim">Форум</a> / 
-	<a class = "anim" onclick = "clean('iframe/musics.html'); this.style.backgroundColor = 'orange'" class = "anim">Плэйлист</a> / 
-	<a onclick = "clean('iframe/forum.html'); this.style.backgroundColor = 'green'; this.style.color = 'white'" class = "anim">Наши игры</a></menu>
+<menu align = "center" class = "anim"><a onclick = "clean('home.html'); this.style.backgroundColor = 'lightblue'" style = "background-color: lightblue"class = "anim">Главная</a> / <a onclick = "clean('iframe/news.html'); this.style.backgroundColor = 'yellow'"class = "anim">Новости</a> / 
+	<a onclick = "clean('forum.html'); this.style.backgroundColor = 'green'; this.style.color = 'white'"class = "anim">Форум</a> / 
+	<a class = "anim" onclick = "clean('musics.html'); this.style.backgroundColor = 'orange'" class = "anim">Плэйлист</a> / 
+	<a onclick = "clean('forum.html'); this.style.backgroundColor = 'green'; this.style.color = 'white'" class = "anim">Наши игры</a></menu>
 <hr>
-<iframe id = "site" src = "iframe/home.html" width = 1200 height = 600 border = "0px" class = "anim"></iframe>
+<iframe id = "site" src = "home.html" width = 1200 height = 600 border = "0px" class = "anim"></iframe>
 <script>
 	function run_help(name) {
 		if (name){
-		document.getElementById("help").innerHTML = "<a href = 'mailto:maarrrkkkk@ya.ru?subject=О сайте. Это " + name + "'>Написать письмо Марку</a>"
+			document.getElementById("help").innerHTML = "<a href = 'mailto:maarrrkkkk@ya.ru?subject=О сайте. Это " + name + "'>Написать письмо Марку</a>"
 		}else {
 			document.getElementById("help").innerHTML += "<p style = 'color: red' id = 'write-name'>Введите своё имя!</p>"
 		}
