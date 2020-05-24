@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News</title>
+	<meta charset="utf-8">
+	<style>
+		* {
+			font-family: Verdana;
+		}
+	</style>
+</head>
+<body>
+	<div id = "picer"></div>
+	<form><p>Заголовок книги:<input id = "name" type = "text" placeholder = "Заголовок книги">Автор книги:<input id = "autor" type = "text" placeholder = "Автор книги">Пароль:<input type = "password" id = "password"><input type = "button" onclick = "clicked()" value = "Отправить"></p></form>
+	<script>
+		function clicked(){
+				name = document.getElementById("name").value;
+				autor = document.getElementById("autor").value;
+				password = document.getElementById("password").value;
+				if (password == "grisha000"){
+					newser = "<div><h2><font color = 'grey'>" + name + "</font> от <font color = 'blue'>" + autor + "</font></h2></div>"
+				}
+				pice = document.getElementById("picer")
+				pice.innerHTML = pice.innerHTML + newser
+		}
+	</script>
+</body>
+</html>

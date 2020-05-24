@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+<p>Послушать любимую песню <select onchange = "ca(this.value)"><option value = "mus1.mp3">Марка</option><option value = "bella.mp3">Беллы</option></select>!</p>
+<a onclick = "if(aud.paused){aud.play(); imger.src = 'pause.jpg'}else{aud.pause(); imger.src = 'play.png'}; funt = !funt"><img src = "play.png" width = 30 id = "sp"></a>
+<a onclick = "aud.pause(); aud.currentTime = 0; imger.src = 'play.png'; funt = true"><img src = "stop.png" width = 30></a>
+<a onclick = "autoaud(this)" id = "a">Autoplay: no</a>
+<script>
+	var imger = document.getElementById("sp")
+	aud = new Audio("mus1.mp3")
+	funt = true
+	function ca(text){
+		aud.pause()
+		imger.src = "play.png"
+		aud = new Audio(text)
+		autoaud(documenty.getElementsByTagName('a')[2])
+	}
+	function autoaud(me){
+		aud.autoplay = !aud.autoplay
+		me.innerText = aud.autoplay ? "Autoplay: yes" : "Autoplay: no"
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1 Д</title>
+	<meta charset = "UTF-8">
+	<style type="text/css">
+		#write-name{
+			color: red;
+		}
+		* {
+			font-family: Verdana, Inter, sans-serif;
+		}
+		.menu {
+			position: fixed;
+			left: 0;
+			right: 60;
+			top: 0;
+			background-color: white;
+			border-radius: 20;
+			transition: all 0.3s ease;
+			opacity: 50%;
+		}
+		.menu:hover{
+			opacity: 100%;
+		}
+		.anim {
+			transition: all 0.3s ease;
+		}
+		.animka {
+			background-color: green;
+			color: white;
+			border-radius: 8px;
+			border: 0;
+			box-shadow: 0 5 15 8 rgb(0, 250, 0);
+			transition: all 0.3s ease;
+		}
+		.animka:hover {
+			background-color: orange;
+			color: white;
+			border-radius: 15px;
+			box-shadow: 0 15 15 20 rgb(250, 0, 0);
+		}
+		.animka:focus {
+			background-color: lightgreen;
+			color: black;
+			border-radius: 5px;
+			box-shadow: 0 15 15 20 rgb(250, 0, 0);
+		}
+	</style>
+</head>
+<body bgcolor="lightgreen">
+
+<menu class = "menu" id = "help"><h6 style = "margin: 0;">Помощь</h6><p>Привет!</p><input type = "text" class = "animka" placeholder = "Пожалуйста введите имя!" id = "name">
+<button onclick = "run_help(document.getElementById('name').value)">Дальше</button>
+</menu>
+
+<h1 align = "center" border = "2px dotted red">1 Д, школа №37</h1>
+
+<menu align = "center" class = "anim"><a onclick = "clean('iframe/home.html'); this.style.backgroundColor = 'lightblue'" style = "background-color: lightblue"class = "anim">Главная</a> / <a onclick = "clean('iframe/news.html'); this.style.backgroundColor = 'yellow'"class = "anim">Новости</a> / 
+	<a onclick = "clean('iframe/forum.html'); this.style.backgroundColor = 'green'; this.style.color = 'white'"class = "anim">Форум</a> / 
+	<a class = "anim" onclick = "clean('iframe/musics.html'); this.style.backgroundColor = 'orange'" class = "anim">Плэйлист</a> / 
+	<a onclick = "clean('iframe/forum.html'); this.style.backgroundColor = 'green'; this.style.color = 'white'" class = "anim">Наши игры</a></menu>
+<hr>
+<iframe id = "site" src = "iframe/home.html" width = 1200 height = 600 border = "0px" class = "anim"></iframe>
+<script>
+	function run_help(name) {
+		if (name){
+		document.getElementById("help").innerHTML = "<a href = 'mailto:maarrrkkkk@ya.ru?subject=О сайте. Это " + name + "'>Написать письмо Марку</a>"
+		}else {
+			document.getElementById("help").innerHTML += "<p style = 'color: red' id = 'write-name'>Введите своё имя!</p>"
+		}
+	}
+	function clean(src){
+		t = document.getElementById('site')
+		if (t.src != src){
+			t.src = src
+		}
+		a = document.getElementsByTagName("a")
+		for (i = 0; i < a.length; i++){
+			a[i].style.backgroundColor = ""
+			a[i].style.color = "black"
+		}
+	}
+	id = 1
+	function upper(){
+		if (window.scrollY >= 0){
+			window.scrollBy(0, -2)
+		}else{
+			clearInterval(id)
+		}
+	}
+	function s(){
+		id = setInterval(100, upper)
+	}
+</script>
+</body>
+</html>
